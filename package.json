@@ -9,14 +9,35 @@
   "author": "tony.he",
   "license": "ISC",
   "dependencies": {
+    "bin-build": "^2.0.0",
+    "bin-wrapper": "^3.0.0",
+    "camelcase": "^2.1.1",
+    "camelcase-keys": "^2.1.0",
     "directory-tree": "^1.0.0",
     "file-extension": "^2.0.1",
     "gulp-rename": "^1.2.2",
     "imagemin": "^4.0.0",
     "imagemin-hokkoo": "^4.0.0",
+    "is-jpg": "^1.0.0",
+    "jpegtran-bin": "^2.0.0",
     "lodash": "^4.11.1",
+    "logalot": "^2.0.0",
+    "map-obj": "^1.0.1",
     "meow": "^3.7.0",
+    "minimist": "^1.2.0",
+    "node-pngcrush": "0.3.6",
+    "node-pngquant-native": "1.0.3",
+    "object-assign": "^4.0.1",
+    "pngcrush": "^1.0.0",
     "tinify": "^1.3.0",
     "tinypng": "^0.1.1"
+  },
+  "devDependencies": {
+    "bin-check": "^3.0.0",
+    "compare-size": "^1.0.1",
+    "mkdirp": "^0.5.0",
+    "mocha": "^2.2.4",
+    "rimraf": "^2.3.2",
+    "xo": "*"
   }
 }
