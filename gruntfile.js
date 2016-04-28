@@ -39,4 +39,5 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-image');
+  // TODO 扩展 此插件，以提高更高的压缩效率，以及更方便的使用方式
 };
