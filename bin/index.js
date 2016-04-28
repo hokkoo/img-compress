@@ -12,7 +12,6 @@ var jpegtran = require('jpegtran-bin');
 var pngcrunsh = require('node-pngcrush');
 var PngCrush = require('pngcrush');
 
-
 var flags =args.flags;
 var imagemin = new Imagemin();
 var myPngCrusher = new PngCrush(['-res', 300, '-rle']);
@@ -102,17 +101,22 @@ function isFile(file){
 }
 
 function compressImagesWithTinypng(files){
-   _.each(files, function(file){
-    if(isFile(file)){
-      compressWithTinipng(file);
-    }
-  });
+  var file = files.pop();
+  if(isFile(file)){
+    compressWithTinipng(file, function(){
+      compressImagesWithTinypng(files);
+    });
+  }
 }
 
-function compressWithTinipng(file){
+function compressWithTinipng(file, cb){
   var destFile = file.replace('\\src\\', '\\dest\\');
   console.log(destFile);
-  tinify.fromFile(file).toFile(destFile);
+  tinify.fromFile(file).toFile(destFile, function(){
+    console.log('tinypng success : ' + file);
+    console.log(JSON.stringify(arguments));
+    cb && cb()
+  });
 }
 
 function fileExtensionFixed(ext){
