@@ -4,6 +4,8 @@ img-compress
 目前集成了
 tinypng
 imagemin
+grunt-image
+imagemagick
 
 之后会持续集成
 To be continue
